@@ -1,0 +1,19 @@
+name: testbuild
+
+on:
+   push:
+     branches:
+       - 'main'
+
+jobs:
+
+  copy text.txt:
+    runs on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+        name: copy file
+        uses: canastro/copy-file-action@master
+        with:
+          source: "rep1/text.txt"
+          target: "newtext.txt"
